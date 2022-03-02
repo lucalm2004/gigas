@@ -1,3 +1,13 @@
+<?php
+if(isset($_POST["submit"])) {
+    $nombre = $_POST['nombre'];
+    $Cognoms = $_POST['Cognoms'];
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
+    $Confirm = $_POST['Confirm'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,23 +36,27 @@
     <form action="validar.php" method="post">
     <div class="login-container">
         <div class="login-info-container">
-            <h1 class="title">Log in</h1>
+            <h1 class="title">Cera un compte per accedir</h1>
             <div class="social-login">
-                <a href="google/index.php">
-                </a>
+        
             </div>
             <br>
             <br><br>
-            <br><br>
-            <br><br>
-            <br>
+           
             <form class="inputs-container">
-                <input class="input" name="usuario" type="text" placeholder="Username">
+            <input class="input" name="nombre" type="text" placeholder="Nom">
+                <br>
+                <input class="input" name="Cognoms" type="text" placeholder="Cognoms">
+                <br>
+                <input class="input" name="usuario" type="text" placeholder="Nom d'usuari">
                 <br>
                 <input class="input" name="contraseña" type="password" placeholder="Password">
-                <p>Forgot password? <span class="span">Click here</span></p>
-                <button class="btn" type="submit" >login</button>
-                <p >Don't have an account? <a href="../Register/index.php" class="span">Sign Up</a></p>
+                <br>
+                <input class="input" name="Confirm" type="password" placeholder="Confirmació">
+                <button class="btn" type="submit" >Resgistrar</button>
+            <?php
+            include "validar.php";
+            ?>
             </form>
         </div>
         <img class="image-container" src="img/img-login.svg" alt="">
